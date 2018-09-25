@@ -9,6 +9,12 @@ import {
     WINDY,
 } from './../../constants/weathers'
 
+const location = 'Pereira,CO';
+const api_key = '2c071b4a9e0250add7197d5db4d80f0e';
+const url_base_weather= 'http://api.openweathermap.org/data/2.5/weather';
+
+const api_weather = `${url_base_weather}?q=${location}&appid=${api_key}`
+
 const data = {
     temperature: 18,
     weatherState: SUN,
@@ -33,6 +39,7 @@ class WeatherLocation extends Component {
     }
 
     handleUpdateClick = () => {
+        fetch(api_weather);
         console.log("Actualizado");
         this.setState({
             data: data1,
